@@ -51,7 +51,7 @@ class SafteyshoesController extends CI_Controller
             'oldh' => $this->input->post('oldh'),
             'appr' => $this->input->post('appr'),
             'spn' => $this->input->post('spn'),
-            'epfno' => $_SESSION['epfno'],
+            'epfno' =>  $this->input->post('epfno'),
         ];
 
         $this->gsModel->insertSafetyshoes($data);

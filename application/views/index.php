@@ -2,9 +2,7 @@
     <div class="container m">
         <?php echo $this->session->flashdata('invalid'); ?>
         <div class="text-center mt-1 align-middle">
-            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                ADD NEW EMPLOYEE
-            </button>
+            
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
@@ -55,51 +53,59 @@
                 </div>
             </div>
         </div>
-        <div class="card-body">
-            <table id="datatable" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>EPF Number</th>
-                        <th>Full Name</th>
-                        <th>SPN Number</th>
-                        <th>NIC</th>
-                        <th>Department</th>
-                        <!-- <th></th>
-                        <th></th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($employee as $row) : ?>
-                        <tr>
-                            <td><?php echo $row->epfno ?></td>
-                            <td><?php echo $row->fname ?></td>
-                            <td><?php echo $row->sapno ?></td>
-                            <td><?php echo $row->nic ?></td>
-                            <td><?php echo $row->depart ?></td>
-                            <!-- <td>
-                                <a href="<?= base_url('safteyshoes/edit/' . $row->epfno); ?>" class="btn btn-success btn-sm">Edit Details</a>
-                            </td> -->
-                            <!-- <td>
-                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteEmp">Delete Employee</button>
-                            </td> -->
-                        </tr>
-                        <!-- Modal
-                        <div class="modal fade" id="deleteEmp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 id="tableName">Employee Details</h4>
+                        <button type="button" class="btn btn-outline-danger  float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">ADD NEW EMPLOYEE</button>
+                        <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="ModalLabal" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                                        <h5 class="modal-title" id="ModalLabal">Enter EPF Number</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <a href="<?= base_url('employee/delete/' . $row->epfno); ?>" class="btn btn-danger">Yes</a>
+                                    <div class="modal-body">
+                                        <form action="<?= base_url('safetyshoes/add'); ?>" method="POST">
+                                            <div class="mb-3">
+                                                <input type="text" name="epfno" class="form-control" required>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" name="epfadd-safetyshoes" class="btn btn-primary">ADD</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table id="datatable" class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>EPF Number</th>
+                                    <th>Full Name</th>
+                                    <th>SPN Number</th>
+                                    <th>NIC</th>
+                                    <th>Department</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($employee as $row) : ?>
+                                    <tr>
+                                        <td><?php echo $row->epfno ?></td>
+                                        <td><?php echo $row->fname ?></td>
+                                        <td><?php echo $row->sapno ?></td>
+                                        <td><?php echo $row->nic ?></td>
+                                        <td><?php echo $row->depart ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>

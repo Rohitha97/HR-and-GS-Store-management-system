@@ -23,8 +23,9 @@
                     </div>
                     <div class="card-body">
                         <form action="<?= base_url('safetyshoes/store'); ?>" method="POST">
+
                             <div class="mb-3">
-                               EPF No: <input  readonly class="form-label" value="<?= $epfno[0]['epfno']; ?>"></input>  &ensp; &ensp;
+                               EPF No: <input name="epfno" readonly class="form-label" value="<?= $epfno[0]['epfno']; ?>"></input>  &ensp; &ensp;
                                Name: <input  readonly class="form-label" value="<?= $epfno[0]['fname']; ?>"></input> &ensp; &ensp;
                                Sap No: <input  readonly class="form-label" value="<?= $epfno[0]['sapno']; ?>"></input>
                             </div>

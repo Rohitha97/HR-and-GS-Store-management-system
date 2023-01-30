@@ -31,7 +31,7 @@ class EmployeeController extends CI_Controller
 
         $result = $this->gsModel->searchEmp($epfno);
 
-        if ($result->num_rows() > 0) {
+        if (!empty($result)) {
             $this->session->set_flashdata("invalid","Employee Already Registered, Please try again.");
             redirect('employee');
         } else {
