@@ -239,7 +239,7 @@
 	 * Drag method of toasts
 	 * @private
 	 */
-	var drag = function() {
+	var drag = (function() {
 	    
 	    return {
 	        move: function(toast, instance, settings, xpos) {
@@ -339,7 +339,7 @@
 	        }
 	    };
 
-	}();
+	}());
 
 
 
