@@ -8,7 +8,7 @@ var uglify      = require( 'gulp-uglify' );
 var csso        = require( 'gulp-csso' );
 
 var catchError = function(err) {
-    console.log(err.toString())
+    
     this.emit('end')
 }
 
