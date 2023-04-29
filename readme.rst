@@ -11,5 +11,5 @@ Features include:
   -  Good issue management, including the ability to issue goods to employees and track usage
   -  Reporting and data analysis, including the ability to generate reports and email on employee and inventory performance
 
-The system is easy to use and navigate, making it a valuable tool for store managers and employees alike. The source code is available on GitHub, so feel free to download and customize it to fit your specific needs."
+The system is easy to use and navigate, making it a valuable tool for store managers and employees alike.feel free to download and customize it to fit your specific needs."
 
